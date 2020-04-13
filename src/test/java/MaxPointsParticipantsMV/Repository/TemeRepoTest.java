@@ -27,7 +27,7 @@ public class TemeRepoTest {
 
     // FOR WBT:
     @Test
-    public void saveAssignmentBadID() {
+    public void saveAssignmentBadID1() {
         TemeRepo repo = new TemeRepo(new TemeValidator(), "teme.xml");
         Teme tema = new Teme(-1, "asta este o tema", 10, 12);
         assertThrows(ValidationException.class, () -> {
@@ -36,7 +36,7 @@ public class TemeRepoTest {
     }
 
     @Test
-    public void saveAssignmentBadDeadline() {
+    public void saveAssignmentBadDeadline1() {
         TemeRepo repo = new TemeRepo(new TemeValidator(), "teme.xml");
         Teme tema = new Teme(1, "asta este o tema", 10, 20);
         assertThrows(ValidationException.class, () -> {
@@ -45,7 +45,7 @@ public class TemeRepoTest {
     }
 
     @Test
-    public void saveAssignmentBadSaptamanaDePrimireIGuess() {
+    public void saveAssignmentBadSaptamanaDePrimireIGuess1() {
         TemeRepo repo = new TemeRepo(new TemeValidator(), "teme.xml");
         Teme tema = new Teme(1, "asta este o tema", 20, 12);
         assertThrows(ValidationException.class, () -> {
