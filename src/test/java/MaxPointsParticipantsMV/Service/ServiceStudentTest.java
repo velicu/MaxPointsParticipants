@@ -71,21 +71,21 @@ public class ServiceStudentTest {
     }
 
     @Test
-    public void addValidStudent1b() {
+    public void addValidStudent2() {
         ServiceStudent service = initStudentService();
         Student student = new Student("100", STUDENT_NAME, GROUP_NUMBER, EMAIL, PROFESOR_NAME);
         service.add(student);
     }
 
     @Test
-    public void addValidStudent1c() {
+    public void addValidStudent3() {
         ServiceStudent service = initStudentService();
         Student student = new Student("180", STUDENT_NAME, GROUP_NUMBER, EMAIL, PROFESOR_NAME);
         service.add(student);
     }
 
     @Test
-    public void addInvalidStudent3() {
+    public void addInvalidStudent1() {
         ServiceStudent service = initStudentService();
         Student student = new Student("", STUDENT_NAME, GROUP_NUMBER, EMAIL, PROFESOR_NAME);
         assertThrows(ValidationException.class, () -> {
@@ -94,7 +94,7 @@ public class ServiceStudentTest {
     }
 
     @Test
-    public void addInvalidStudent4() {
+    public void addInvalidStudent2() {
         ServiceStudent service = initStudentService();
         Student student = new Student("dfvzxc", STUDENT_NAME, GROUP_NUMBER, EMAIL, PROFESOR_NAME);
         assertThrows(ValidationException.class, () -> {
@@ -103,42 +103,10 @@ public class ServiceStudentTest {
     }
 
     @Test
-    public void addValidStudent2() {
+    public void addValidStudent4() {
         ServiceStudent service = initStudentService();
         Student student = new Student("324", STUDENT_NAME, GROUP_NUMBER, EMAIL, PROFESOR_NAME);
         service.add(student);
-    }
-
-    @Test
-    public void addValidStudent3() {
-        ServiceStudent service = initStudentService();
-        Student student = new Student(ID, STUDENT_NAME, GROUP_NUMBER, EMAIL, PROFESOR_NAME);
-        service.add(student);
-    }
-
-    @Test
-    public void addInvalidStudent5() {
-        ServiceStudent service = initStudentService();
-        Student student = new Student(ID, STUDENT_NAME, GROUP_NUMBER, "gmail.com", PROFESOR_NAME);
-        assertThrows(ValidationException.class, () -> {
-            service.add(student);
-        });
-    }
-
-    @Test
-    public void addValidStudent4() {
-        ServiceStudent service = initStudentService();
-        Student student = new Student(ID, STUDENT_NAME, GROUP_NUMBER, EMAIL, PROFESOR_NAME);
-        service.add(student);
-    }
-
-    @Test
-    public void addInvalidStudent6() {
-        ServiceStudent service = initStudentService();
-        Student student = new Student(ID, "T3455 bbr5", GROUP_NUMBER, EMAIL, PROFESOR_NAME);
-        assertThrows(ValidationException.class, () -> {
-        service.add(student);
-    });
     }
 
     @Test
@@ -149,7 +117,39 @@ public class ServiceStudentTest {
     }
 
     @Test
-    public void addInvalidStudent7() {
+    public void addInvalidStudent3() {
+        ServiceStudent service = initStudentService();
+        Student student = new Student(ID, STUDENT_NAME, GROUP_NUMBER, "gmail.com", PROFESOR_NAME);
+        assertThrows(ValidationException.class, () -> {
+            service.add(student);
+        });
+    }
+
+    @Test
+    public void addValidStudent6() {
+        ServiceStudent service = initStudentService();
+        Student student = new Student(ID, STUDENT_NAME, GROUP_NUMBER, EMAIL, PROFESOR_NAME);
+        service.add(student);
+    }
+
+    @Test
+    public void addInvalidStudent4() {
+        ServiceStudent service = initStudentService();
+        Student student = new Student(ID, "T3455 bbr5", GROUP_NUMBER, EMAIL, PROFESOR_NAME);
+        assertThrows(ValidationException.class, () -> {
+        service.add(student);
+    });
+    }
+
+    @Test
+    public void addValidStudent7() {
+        ServiceStudent service = initStudentService();
+        Student student = new Student(ID, STUDENT_NAME, GROUP_NUMBER, EMAIL, PROFESOR_NAME);
+        service.add(student);
+    }
+
+    @Test
+    public void addInvalidStudent5() {
         ServiceStudent service = initStudentService();
         Student student = new Student(ID, STUDENT_NAME, GROUP_NUMBER, EMAIL, "Ceva Profe$or");
         assertThrows(ValidationException.class, () -> {
