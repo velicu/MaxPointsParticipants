@@ -2,13 +2,13 @@
 <inbox>
     <Student idStudent="445">
         <nume>Teodora Velicu</nume>
-        <grupa>937</grupa>
+        <grupa>927</grupa>
         <mail>teo@gmail.com</mail>
         <profesor>Ceva profesor</profesor>
     </Student>
     <Student idStudent="446">
         <nume>Szilard Veress</nume>
-        <grupa>937</grupa>
+        <grupa>926</grupa>
         <mail>szili@gmail.com</mail>
         <profesor>Ceva alt prfoesor </profesor>
     </Student>
