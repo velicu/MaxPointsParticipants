@@ -1,6 +1,7 @@
 package MaxPointsParticipantsMV.Domain;
 
 import java.util.Map;
+import java.util.Objects;
 
 public class Nota implements hasID<Map.Entry<String, Integer>>{
     private Map.Entry<String, Integer> id;
@@ -50,4 +51,15 @@ public class Nota implements hasID<Map.Entry<String, Integer>>{
         return this.tm.getDeadline();
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Nota nota = (Nota) o;
+        return Float.compare(nota.valoare, valoare) == 0 &&
+                data == nota.data &&
+                id.equals(nota.id) &&
+                st.equals(nota.st) &&
+                tm.equals(nota.tm);
+    }
 }

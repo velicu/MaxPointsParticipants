@@ -116,7 +116,8 @@ public class NoteRepo extends AbstractRepo<Nota, Map.Entry<String, Integer>> {
     public Nota save(Nota el, String fd) {
         AtomicInteger ok = new AtomicInteger();
         findAll().forEach(n -> {
-            if (n.getStudent() == el.getStudent() && n.getTema() == el.getTema()) ok.set(1);
+            if (n.getStudent().equals(el.getStudent()) && n.getTema().equals(el.getTema()))
+                ok.set(1);
         });
         /**
          for(Nota n:findAll()){
@@ -125,12 +126,14 @@ public class NoteRepo extends AbstractRepo<Nota, Map.Entry<String, Integer>> {
          }
          */
         if (ok.get() == 0) {
+            System.out.println("in ok.get() == 0");
             Nota t = super.save(el);
+            System.out.println(t);
             try {
                 writeToFile(el, fd);
                 writeToFile2(el);
             } catch (IOException ex) {
-                System.out.println(ex);
+                ex.printStackTrace();
             }
             return t;
         } else {

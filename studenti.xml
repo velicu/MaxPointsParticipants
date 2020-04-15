@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <inbox>
-    <Student idStudent="1">
-        <nume>Roman Ionut</nume>
-        <grupa>222</grupa>
-        <mail>riir3478@scs.ubbcluj.ro</mail>
-        <profesor>Plesu Andrei</profesor>
-    </Student>
     <Student idStudent="100">
         <nume>Teodora Velicu</nume>
         <grupa>937</grupa>
         <mail>teo@gmail.com</mail>
         <profesor>Ceva Prof</profesor>
+    </Student>
+    <Student idStudent="1">
+        <nume>Teodora Velicu</nume>
+        <grupa>937</grupa>
+        <mail>teo@gmail.com</mail>
+        <profesor>Ceva profesor</profesor>
     </Student>
     <Student idStudent="2">
         <nume>Gorea Andra</nume>

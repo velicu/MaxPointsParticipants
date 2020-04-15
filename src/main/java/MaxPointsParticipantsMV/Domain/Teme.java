@@ -1,5 +1,7 @@
 package MaxPointsParticipantsMV.Domain;
 
+import java.util.Objects;
+
 public class Teme implements hasID<Integer>{
     private Integer nr;
     private String descriere;
@@ -37,5 +39,16 @@ public class Teme implements hasID<Integer>{
     }
     public String toString(){
         return nr.toString()+' '+descriere+' '+sapt_primire.toString()+' '+deadline.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Teme teme = (Teme) o;
+        return Objects.equals(nr, teme.nr) &&
+                Objects.equals(descriere, teme.descriere) &&
+                Objects.equals(deadline, teme.deadline) &&
+                Objects.equals(sapt_primire, teme.sapt_primire);
     }
 }

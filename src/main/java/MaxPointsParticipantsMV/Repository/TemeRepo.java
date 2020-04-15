@@ -54,6 +54,7 @@ public class TemeRepo extends AbstractRepo<Teme, Integer> {
     private void writeToFile(){
         try{
             DocumentBuilder db=builderFactory.newDocumentBuilder();
+            // ...
             Document doc=db.newDocument();
             Element r = doc.createElement("Teme");
             for(Teme s:findAll()) {
@@ -83,6 +84,7 @@ public class TemeRepo extends AbstractRepo<Teme, Integer> {
             t.setOutputProperty(OutputKeys.ENCODING, "UTF-8");
             t.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "4");
             t.transform(new DOMSource(doc),new StreamResult(new FileOutputStream(fName)));
+            // ..
         }
         catch (Exception e){e.printStackTrace();}
     }
