@@ -10,6 +10,8 @@ import org.junit.Test;
 import java.util.AbstractMap;
 import java.util.Map;
 
+import static org.junit.Assert.assertEquals;
+
 public class GradeRepoTest {
     @Test
     public void testAddGrade() {
@@ -17,6 +19,7 @@ public class GradeRepoTest {
         Student student = new Student("1", "Teodora Velicu", 937, "teo@gmail.com", "Ceva profesor");
         Teme tema = new Teme(2, "asta este o tema", 10, 11);
         Nota nota = new Nota(new AbstractMap.SimpleEntry<>("1", 2), student, tema, (float) 9.5, 5);
-        repo.save(nota);
+        Nota returnedNota = repo.save(nota);
+        assertEquals(returnedNota, nota);
     }
 }
